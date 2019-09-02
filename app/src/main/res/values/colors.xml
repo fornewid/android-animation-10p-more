@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="android1">#3DDC84</color>
+    <color name="android2">#0B2F41</color>
+    <color name="android3">#4285F4</color>
+    <color name="android4">#F86734</color>
+    <color name="android5">#EFF7CF</color>
+</resources>
