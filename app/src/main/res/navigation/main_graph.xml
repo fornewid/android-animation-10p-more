@@ -26,4 +26,17 @@
         android:name="soup.animation.sample.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/anim"
+        android:name="soup.animation.sample.AnimFragment"
+        tools:layout="@layout/fragment_anim" />
+
+    <action
+        android:id="@+id/action_to_anim"
+        app:destination="@id/anim"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
 </navigation>
