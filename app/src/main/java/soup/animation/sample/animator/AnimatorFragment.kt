@@ -60,7 +60,7 @@ class AnimatorFragment : Fragment() {
             maxTranslationY = resources.getDimension(R.dimen.icon_size) * 3
 
             animator.doOnRepeat {
-                updateRippleEffect()
+                facingButton.performClick()
             }
             animator.addUpdateListener {
                 updateUi(it.animatedValue as Float)
@@ -81,16 +81,5 @@ class AnimatorFragment : Fragment() {
         icon.translationX = lerp(0f, maxTranslationX, fraction)
         icon.translationY = lerp(0f, -maxTranslationY, fraction)
         bug.translationX = lerp(0f, maxTranslationX, fraction)
-    }
-
-    private fun updateRippleEffect() {
-        facingButton.performClick()
-    }
-
-    private fun View.performRippleEffect() {
-        isPressed = true
-        postOnAnimationDelayed(50) {
-            isPressed = false
-        }
     }
 }
