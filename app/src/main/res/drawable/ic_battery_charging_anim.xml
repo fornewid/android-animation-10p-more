@@ -2,6 +2,9 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="false">
     <item
+        android:drawable="@drawable/ic_battery_charging_0"
+        android:duration="200" />
+    <item
         android:drawable="@drawable/ic_battery_charging_20"
         android:duration="200" />
     <item

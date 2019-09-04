@@ -27,6 +27,8 @@
             android:id="@+id/battery"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_battery_anim"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,15 +37,42 @@
             android:id="@+id/battery_charging"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_battery_charging_anim"
             app:layout_constraintStart_toEndOf="@id/battery"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soup.animation.sample.drawable.AnimatedImageView
+            android:id="@+id/batteryClip"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_battery_clip"
+            app:layout_constraintStart_toEndOf="@id/battery_charging"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soup.animation.sample.drawable.AnimatedImageView
+            android:id="@+id/batteryChargingClip"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_battery_charging_clip"
+            app:layout_constraintStart_toEndOf="@id/batteryClip"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/rippleNormal"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
             android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_battery_20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/battery" />
 
@@ -51,27 +80,68 @@
             android:id="@+id/rippleBorderless"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
             android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_battery_20"
             app:layout_constraintStart_toEndOf="@id/rippleNormal"
             app:layout_constraintTop_toBottomOf="@id/battery" />
 
-        <!-- TODO: -->
         <ImageView
             android:id="@+id/rippleWrong"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
-            android:background="?selectableItemBackgroundBorderless"
+            android:layout_margin="4dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_rectangle"
             app:layout_constraintStart_toEndOf="@id/rippleBorderless"
             app:layout_constraintTop_toBottomOf="@id/battery" />
 
-        <!-- TODO: -->
         <ImageView
-            android:id="@+id/rippleCustom"
+            android:id="@+id/rippleCustom1"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
-            android:background="?selectableItemBackgroundBorderless"
+            android:layout_margin="4dp"
+            android:background="@drawable/ic_rectangle_ripple1"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintStart_toEndOf="@id/rippleWrong"
             app:layout_constraintTop_toBottomOf="@id/battery" />
+
+        <ImageView
+            android:id="@+id/rippleCustom2"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:background="@drawable/ic_rectangle_ripple2"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toEndOf="@id/rippleCustom1"
+            app:layout_constraintTop_toBottomOf="@id/battery" />
+
+        <soup.animation.sample.drawable.AnimatedImageView
+            android:id="@+id/animatedRotate"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_rotate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rippleNormal" />
+
+        <soup.animation.sample.drawable.CheckedImageView
+            android:id="@+id/animatedVector"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_check_material_anim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
