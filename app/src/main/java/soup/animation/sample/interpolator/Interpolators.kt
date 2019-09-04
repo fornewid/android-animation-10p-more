@@ -11,8 +11,8 @@ object Interpolators {
     val SPRING by lazy { OvershootInterpolator(0.7f) }
     val LINEAR by lazy { LinearInterpolator() }
     val ACCELERATE by lazy { AccelerateInterpolator() }
+    val DECELERATE by lazy { DecelerateInterpolator() }
     val ACCELERATE_DECELERATE by lazy { AccelerateDecelerateInterpolator() }
-    val DECELERATE_QUINT by lazy { DecelerateInterpolator(2.5f) }
     val FAST_OUT_SLOW_IN by cubicBezier(0.4f, 0f, 0.2f, 1f)
     val FAST_OUT_LINEAR_IN by cubicBezier(0.4f, 0f, 1f, 1f)
     val LINEAR_OUT_SLOW_IN by cubicBezier(0f, 0f, 0.2f, 1f)

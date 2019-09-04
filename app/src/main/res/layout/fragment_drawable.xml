@@ -25,32 +25,32 @@
 
         <soup.animation.sample.drawable.AnimatedImageView
             android:id="@+id/battery"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:src="@drawable/ic_battery_anim"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <soup.animation.sample.drawable.AnimatedImageView
             android:id="@+id/battery_charging"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:src="@drawable/ic_battery_charging_anim"
             app:layout_constraintStart_toEndOf="@id/battery"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/rippleNormal"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:background="?selectableItemBackground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/battery" />
 
         <ImageView
             android:id="@+id/rippleBorderless"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:background="?selectableItemBackgroundBorderless"
             app:layout_constraintStart_toEndOf="@id/rippleNormal"
             app:layout_constraintTop_toBottomOf="@id/battery" />
@@ -58,8 +58,8 @@
         <!-- TODO: -->
         <ImageView
             android:id="@+id/rippleWrong"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:background="?selectableItemBackgroundBorderless"
             app:layout_constraintStart_toEndOf="@id/rippleBorderless"
             app:layout_constraintTop_toBottomOf="@id/battery" />
@@ -67,8 +67,8 @@
         <!-- TODO: -->
         <ImageView
             android:id="@+id/rippleCustom"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:background="?selectableItemBackgroundBorderless"
             app:layout_constraintStart_toEndOf="@id/rippleWrong"
             app:layout_constraintTop_toBottomOf="@id/battery" />
