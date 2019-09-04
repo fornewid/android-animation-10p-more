@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Animation Sample</string>
+    <string name="title_home">Home</string>
+    <string name="title_interpolator">Interpolator</string>
+    <string name="title_drawable">Drawable Animation</string>
+    <string name="title_view_animation">View Animation</string>
+    <string name="title_view_property">ViewPropertyAnimator</string>
+    <string name="title_animator">Animator</string>
+    <string name="title_spring">SpringAnimation</string>
 </resources>

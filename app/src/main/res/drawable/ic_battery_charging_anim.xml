@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/ic_battery_charging_20"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_30"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_50"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_60"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_80"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_90"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/ic_battery_charging_100"
+        android:duration="200" />
+</animation-list>

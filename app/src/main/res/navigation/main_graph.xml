@@ -26,14 +26,91 @@
         android:name="soup.animation.sample.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
+    <!-- Interpolator -->
+
     <fragment
-        android:id="@+id/anim"
-        android:name="soup.animation.sample.AnimFragment"
-        tools:layout="@layout/fragment_anim" />
+        android:id="@+id/interpolator"
+        android:name="soup.animation.sample.interpolator.InterpolatorFragment"
+        tools:layout="@layout/fragment_interpolator" />
 
     <action
-        android:id="@+id/action_to_anim"
-        app:destination="@id/anim"
+        android:id="@+id/action_to_interpolator"
+        app:destination="@id/interpolator"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Animator -->
+
+    <fragment
+        android:id="@+id/animator"
+        android:name="soup.animation.sample.animator.AnimatorFragment"
+        tools:layout="@layout/fragment_animator" />
+
+    <action
+        android:id="@+id/action_to_animator"
+        app:destination="@id/animator"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Drawable Animation -->
+
+    <fragment
+        android:id="@+id/drawable"
+        android:name="soup.animation.sample.drawable.DrawableFragment"
+        tools:layout="@layout/fragment_drawable" />
+
+    <action
+        android:id="@+id/action_to_drawable"
+        app:destination="@id/drawable"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- View Animation -->
+
+    <fragment
+        android:id="@+id/view_property"
+        android:name="soup.animation.sample.view_property.ViewPropertyFragment"
+        tools:layout="@layout/fragment_view_property" />
+
+    <action
+        android:id="@+id/action_to_view_property"
+        app:destination="@id/view_property"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- View Animation -->
+
+    <fragment
+        android:id="@+id/view_animation"
+        android:name="soup.animation.sample.view_animation.ViewAnimationFragment"
+        tools:layout="@layout/fragment_view_animation" />
+
+    <action
+        android:id="@+id/action_to_view_animation"
+        app:destination="@id/view_animation"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Spring Animation -->
+
+    <fragment
+        android:id="@+id/spring"
+        android:name="soup.animation.sample.spring.SpringFragment"
+        tools:layout="@layout/fragment_spring" />
+
+    <action
+        android:id="@+id/action_to_spring"
+        app:destination="@id/spring"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"

@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="Home" />
+            app:title="@string/title_view_animation" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -29,29 +29,6 @@
             android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:background="?selectableItemBackgroundBorderless"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/facingFrontButton"
-            android:layout_width="60dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_facing_front"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/facingBackButton"
-            android:layout_width="60dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:alpha="0"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_facing_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

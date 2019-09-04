@@ -6,19 +6,25 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import soup.animation.sample.MainGraphDirections.Companion.actionToAnimator
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
+import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
+import soup.animation.sample.MainGraphDirections.Companion.actionToSpring
+import soup.animation.sample.MainGraphDirections.Companion.actionToViewAnimation
+import soup.animation.sample.MainGraphDirections.Companion.actionToViewProperty
 
 class HomeListAdapter(
     private val listener: (HomeItem) -> Unit
 ) : RecyclerView.Adapter<HomeListAdapter.ViewHolder>() {
 
-    private val items = (1..12)
-        .map { index ->
-            HomeItem(
-                iconId = R.drawable.ic_facing_back,
-                text = "Item $index"
-            )
-        }
-        .toList()
+    private val items = listOf(
+        HomeItem(R.drawable.ic_interpolator, R.string.title_interpolator) { actionToInterpolator() },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable) { actionToDrawable() },
+        HomeItem(R.drawable.ic_view_animation, R.string.title_view_animation) { actionToViewAnimation() },
+        HomeItem(R.drawable.ic_view_property, R.string.title_view_property) { actionToViewProperty() },
+        HomeItem(R.drawable.ic_animator, R.string.title_animator) { actionToAnimator() },
+        HomeItem(R.drawable.ic_spring, R.string.title_spring) { actionToSpring() }
+    )
 
     init {
         notifyDataSetChanged()
@@ -52,8 +58,8 @@ class HomeListAdapter(
         private val textView: TextView = view.findViewById(R.id.text)
 
         fun bind(item: HomeItem) {
-            iconView.setImageResource(item.iconId)
-            textView.text = item.text
+            iconView.setImageResource(item.iconResId)
+            textView.setText(item.textResId)
         }
     }
 }

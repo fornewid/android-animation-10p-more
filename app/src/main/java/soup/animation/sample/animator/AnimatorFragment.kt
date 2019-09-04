@@ -1,4 +1,4 @@
-package soup.animation.sample
+package soup.animation.sample.animator
 
 import android.animation.AnimatorInflater
 import android.os.Bundle
@@ -6,16 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_anim.*
+import kotlinx.android.synthetic.main.fragment_animator.*
+import soup.animation.sample.R
 
-class AnimFragment : Fragment() {
+class AnimatorFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_anim, container, false)
+        return inflater.inflate(R.layout.fragment_animator, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

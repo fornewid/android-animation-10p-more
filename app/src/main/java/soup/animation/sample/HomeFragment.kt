@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private val listAdapter = HomeListAdapter { item ->
-        findNavController().navigate(HomeFragmentDirections.actionToAnim())
+        findNavController().navigate(item.direction())
     }
 
     override fun onCreateView(
