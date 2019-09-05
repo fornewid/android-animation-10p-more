@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.animation.doOnRepeat
 import androidx.core.view.doOnLayout
-import androidx.core.view.postOnAnimationDelayed
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_animator.*
 import soup.animation.sample.R
@@ -24,7 +23,7 @@ class AnimatorFragment : Fragment() {
         repeatMode = ValueAnimator.REVERSE
         repeatCount = ValueAnimator.INFINITE
         duration = 1_000L
-        interpolator = Interpolators.LINEAR
+        interpolator = Interpolators.ACCELERATE_DECELERATE
     }
 
     override fun onCreateView(
@@ -57,7 +56,7 @@ class AnimatorFragment : Fragment() {
 
         view.doOnLayout {
             maxTranslationX = view.measuredWidth - resources.getDimension(R.dimen.icon_size)
-            maxTranslationY = resources.getDimension(R.dimen.icon_size) * 3
+            maxTranslationY = resources.getDimension(R.dimen.icon_size) * -2
 
             animator.doOnRepeat {
                 facingButton.performClick()
@@ -77,9 +76,14 @@ class AnimatorFragment : Fragment() {
     }
 
     private fun updateUi(fraction: Float) {
-        icon.rotation = lerp(0f, 360f, fraction)
-        icon.translationX = lerp(0f, maxTranslationX, fraction)
-        icon.translationY = lerp(0f, -maxTranslationY, fraction)
+        icon.run {
+            rotation = lerp(0f, 360f, fraction)
+            alpha = lerp(1f, .5f, fraction)
+            scaleX = lerp(1f, 2f, fraction)
+            scaleY = lerp(1f, .5f, fraction)
+            translationX = lerp(0f, maxTranslationX, fraction)
+            translationY = lerp(0f, maxTranslationY, fraction)
+        }
         bug.translationX = lerp(0f, maxTranslationX, fraction)
     }
 }

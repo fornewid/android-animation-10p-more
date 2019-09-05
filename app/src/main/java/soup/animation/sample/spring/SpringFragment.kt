@@ -5,15 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.animation.doOnRepeat
 import androidx.core.view.doOnLayout
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
+import androidx.dynamicanimation.animation.withSpringForceProperties
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_spring.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
-import soup.animation.sample.util.lerp
 
 class SpringFragment : Fragment() {
 
@@ -23,11 +24,9 @@ class SpringFragment : Fragment() {
     private val animator = ValueAnimator.ofFloat(0f, 1f).apply {
         repeatMode = ValueAnimator.REVERSE
         repeatCount = ValueAnimator.INFINITE
-        duration = 1_000L
+        duration = 1000L
         interpolator = Interpolators.LINEAR
     }
-
-    private lateinit var springAnimation: SpringAnimation
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,36 +38,55 @@ class SpringFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        springAnimation = SpringAnimation(bug, DynamicAnimation.TRANSLATION_X)
-            .setSpring(
-                SpringForce()
-                    .setDampingRatio(SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY)
-                    .setStiffness(SpringForce.STIFFNESS_VERY_LOW)
-            )
+        val iconTransX = icon.springAnimationOf(DynamicAnimation.TRANSLATION_X)
+        val iconTransY = icon.springAnimationOf(DynamicAnimation.TRANSLATION_Y)
+        val iconScaleX = icon.springAnimationOf(DynamicAnimation.SCALE_X)
+        val iconScaleY = icon.springAnimationOf(DynamicAnimation.SCALE_Y)
+        val iconRotation = icon.springAnimationOf(DynamicAnimation.ROTATION)
+        val iconAlpha = icon.springAnimationOf(DynamicAnimation.ALPHA)
+        val bugSpring = bug.springAnimationOf(DynamicAnimation.TRANSLATION_X)
 
         view.doOnLayout {
             maxTranslationX = view.measuredWidth - resources.getDimension(R.dimen.icon_size)
-            maxTranslationY = resources.getDimension(R.dimen.icon_size) * 3
+            maxTranslationY = resources.getDimension(R.dimen.icon_size) * -2
 
-            animator.addUpdateListener {
-                updateUi(it.animatedFraction)
+            var reverse = false
+            animator.doOnRepeat {
+                if (reverse) {
+                    iconTransX.animateToFinalPosition(0f)
+                    iconTransY.animateToFinalPosition(0f)
+                    iconRotation.animateToFinalPosition(0f)
+                    iconScaleX.animateToFinalPosition(1f)
+                    iconScaleY.animateToFinalPosition(1f)
+                    iconAlpha.animateToFinalPosition(1f)
+                    bugSpring.animateToFinalPosition(0f)
+                } else {
+                    iconTransX.animateToFinalPosition(maxTranslationX)
+                    iconTransY.animateToFinalPosition(maxTranslationY)
+                    iconRotation.animateToFinalPosition(360f)
+                    iconScaleX.animateToFinalPosition(2f)
+                    iconScaleY.animateToFinalPosition(.5f)
+                    iconAlpha.animateToFinalPosition(.5f)
+                    bugSpring.animateToFinalPosition(maxTranslationX)
+                }
+                reverse = !reverse
             }
             animator.start()
         }
     }
 
     override fun onDestroyView() {
+        animator.removeAllListeners()
         animator.removeAllUpdateListeners()
         animator.cancel()
         super.onDestroyView()
     }
 
-    private fun updateUi(fraction: Float) {
-        icon.rotation = lerp(0f, 360f, fraction)
-        icon.translationX = lerp(0f, maxTranslationX, fraction)
-        icon.translationY = lerp(0f, -maxTranslationY, fraction)
-        springAnimation.animateToFinalPosition(
-            lerp(0f, maxTranslationX, fraction)
-        )
+    private fun View.springAnimationOf(viewProperty: DynamicAnimation.ViewProperty): SpringAnimation {
+        return SpringAnimation(this, viewProperty)
+            .withSpringForceProperties {
+                dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
+                stiffness = SpringForce.STIFFNESS_LOW
+            }
     }
 }

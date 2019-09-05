@@ -14,6 +14,7 @@ import soup.animation.sample.interpolator.Interpolators
 class ViewPropertyFragment : Fragment() {
 
     private var maxTranslationX: Float = 0f
+    private var maxTranslationY: Float = 0f
 
     private val uiHandler = Handler(Handler.Callback {
         updateUi()
@@ -32,6 +33,7 @@ class ViewPropertyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         view.doOnLayout {
             maxTranslationX = view.measuredWidth - resources.getDimension(R.dimen.icon_size)
+            maxTranslationY = resources.getDimension(R.dimen.icon_size) * -2
             uiHandler.sendEmptyMessage(UPDATE_UI)
         }
     }
@@ -44,19 +46,39 @@ class ViewPropertyFragment : Fragment() {
     private fun updateUi() {
         icon?.run {
             animate().cancel()
-            val (targetTransX, targetRotation) = if (icon.isChecked) {
-                Pair(0f, 0f)
+            val targetTransX: Float
+            val targetTransY: Float
+            val targetRotation: Float
+            val targetScaleX: Float
+            val targetScaleY: Float
+            val targetAlpha: Float
+            if (icon.isChecked) {
+                targetTransX = 0f
+                targetTransY = 0f
+                targetRotation = 0f
+                targetScaleX = 1f
+                targetScaleY = 1f
+                targetAlpha = 1f
             } else {
-                Pair(maxTranslationX, 360f)
+                targetTransX = maxTranslationX
+                targetTransY = maxTranslationY
+                targetRotation = 360f
+                targetScaleX = 2f
+                targetScaleY = .5f
+                targetAlpha = .5f
             }
             animate()
                 .setDuration(1000)
                 .setInterpolator(Interpolators.ACCELERATE_DECELERATE)
                 .rotation(targetRotation)
+                .scaleX(targetScaleX)
+                .scaleY(targetScaleY)
+                .alpha(targetAlpha)
                 .translationX(targetTransX)
+                .translationY(targetTransY)
                 .withEndAction {
                     isChecked = !isChecked
-                    uiHandler.sendEmptyMessageDelayed(UPDATE_UI, 1000L)
+                    uiHandler.sendEmptyMessage(UPDATE_UI)
                 }
         }
     }
