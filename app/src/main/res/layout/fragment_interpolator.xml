@@ -28,6 +28,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <soup.animation.sample.interpolator.InterpolatorView
+                android:id="@+id/interpolator"
+                android:layout_width="180dp"
+                android:layout_height="180dp" />
+
             <ImageView
                 android:id="@+id/linear"
                 android:layout_width="@dimen/icon_size"

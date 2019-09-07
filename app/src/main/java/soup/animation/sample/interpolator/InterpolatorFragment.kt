@@ -42,6 +42,7 @@ class InterpolatorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         BOUNCE = AnimationUtils.loadInterpolator(context, android.R.interpolator.bounce)
+        interpolator.setInterpolatorResource(android.R.interpolator.overshoot)
         view.doOnLayout {
             translationX = view.measuredWidth - resources.getDimensionPixelSize(R.dimen.icon_size)
         }
