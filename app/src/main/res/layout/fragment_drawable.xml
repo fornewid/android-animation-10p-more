@@ -160,8 +160,8 @@
             android:layout_margin="4dp"
             android:indeterminateDrawable="@drawable/loading_custom"
             android:indeterminateDuration="1000"
-            android:min="0"
             android:max="10000"
+            android:min="0"
             app:layout_constraintStart_toEndOf="@id/loading"
             app:layout_constraintTop_toBottomOf="@id/animatedVector" />
 
@@ -184,6 +184,23 @@
             android:indeterminateDuration="1000"
             app:layout_constraintStart_toEndOf="@id/contentLoading"
             app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <soup.animation.sample.drawable.AnimatedFadeImageView
+            android:id="@+id/animatedGradientFade"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:src="@drawable/gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loading" />
+
+        <soup.animation.sample.drawable.AnimatedGradientView
+            android:id="@+id/animatedGradientAnimator"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientFade"
+            app:layout_constraintTop_toBottomOf="@id/loading" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
