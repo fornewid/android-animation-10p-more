@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="icon_size">60dp</dimen>
+    <dimen name="interpolator_view_size">180dp</dimen>
     <dimen name="interpolator_circle_radius">4dp</dimen>
 </resources>

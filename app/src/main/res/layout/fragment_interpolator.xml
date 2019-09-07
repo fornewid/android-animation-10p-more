@@ -26,59 +26,132 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
             android:orientation="vertical">
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/linear"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@android:interpolator/linear" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Linear" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/accelerate"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@interpolator/accelerate" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Accelerate" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/decelerate"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@interpolator/decelerate" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Decelerate" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/accelerateDecelerate"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@android:interpolator/accelerate_decelerate" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="AccelerateDecelerate" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/bounce"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@android:interpolator/bounce" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Bounce" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/overshoot"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@android:interpolator/overshoot" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Overshoot" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/spring"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal"
                 app:interpolator="@interpolator/spring" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Spring" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/easeInOutCubic"
-                android:layout_width="180dp"
-                android:layout_height="180dp" />
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="EaseInOutCubic" />
 
             <soup.animation.sample.interpolator.InterpolatorView
                 android:id="@+id/easeInOutQuad"
-                android:layout_width="180dp"
-                android:layout_height="180dp" />
+                android:layout_width="@dimen/interpolator_view_size"
+                android:layout_height="@dimen/interpolator_view_size"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="EaseInOutQuad" />
 
         </LinearLayout>
     </ScrollView>
