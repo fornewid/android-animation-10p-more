@@ -46,7 +46,6 @@ class InterpolatorView @JvmOverloads constructor(
             postInvalidateOnAnimation()
         }
     }
-    private var isAttached: Boolean = false
 
     private var interpolator: Interpolator? = null
     private var points: List<PointF> = emptyList()
@@ -54,6 +53,17 @@ class InterpolatorView @JvmOverloads constructor(
     private var bound = RectF(0f, 0f, 0f, 0f)
     private var padding = 0f
     private var fraction = 0f
+
+    init {
+        val a = context.obtainStyledAttributes(attrs, R.styleable.InterpolatorView, 0, 0)
+
+        val interpolatorId = a.getResourceId(R.styleable.InterpolatorView_interpolator, 0)
+        if (interpolatorId > 0) {
+            setInterpolator(AnimationUtils.loadInterpolator(context, interpolatorId))
+        }
+
+        a.recycle()
+    }
 
     fun setInterpolator(interpolator: Interpolator?) {
         this.interpolator = interpolator
@@ -105,7 +115,7 @@ class InterpolatorView @JvmOverloads constructor(
             canvas.drawPoint(it.x, it.y, interpolatorLinePaint)
         }
 
-        // interpolator circle
+        // inner interpolator circle
         val interpolation = interpolator?.getInterpolation(fraction) ?: 0f
         canvas.drawCircle(
             boundW * fraction,
@@ -114,7 +124,7 @@ class InterpolatorView @JvmOverloads constructor(
             circlePaint
         )
 
-        // interpolator circle
+        // outer interpolator circle
         canvas.drawCircle(
             boundW + padding / 2,
             boundH * (1 - interpolation),
@@ -126,24 +136,21 @@ class InterpolatorView @JvmOverloads constructor(
     }
 
     private fun updateAnim() {
-        if (isAttached) {
-            anim.cancel()
-        }
         if (isShown) {
             anim.start()
+        } else {
+            anim.cancel()
         }
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        isAttached = true
         updateAnim()
     }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         anim.cancel()
-        isAttached = false
     }
 
     override fun onVisibilityChanged(changedView: View, vis: Int) {
