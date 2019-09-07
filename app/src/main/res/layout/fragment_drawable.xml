@@ -143,6 +143,48 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
 
+        <ProgressBar
+            android:id="@+id/loading"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <ProgressBar
+            android:id="@+id/loadingCustom"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:indeterminateDrawable="@drawable/loading_custom"
+            android:indeterminateDuration="1000"
+            android:min="0"
+            android:max="10000"
+            app:layout_constraintStart_toEndOf="@id/loading"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/contentLoading"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toEndOf="@id/loadingCustom"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/contentLoadingCustom"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:indeterminateDrawable="@drawable/loading_custom"
+            android:indeterminateDuration="1000"
+            app:layout_constraintStart_toEndOf="@id/contentLoading"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

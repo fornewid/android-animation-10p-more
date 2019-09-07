@@ -38,6 +38,7 @@ class DrawableFragment : Fragment() {
             updateUi(it.animatedFraction)
         }
         animator.start()
+//        loading.show()
     }
 
     override fun onDestroyView() {
