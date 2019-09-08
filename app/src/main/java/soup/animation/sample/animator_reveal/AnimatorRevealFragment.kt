@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import androidx.core.animation.doOnEnd
 import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
+import com.google.android.material.circularreveal.CircularRevealCompat
+import com.google.android.material.circularreveal.CircularRevealLinearLayout
+import com.google.android.material.circularreveal.CircularRevealWidget
 import kotlinx.android.synthetic.main.fragment_animator_reveal.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
@@ -16,7 +19,6 @@ import kotlin.math.hypot
 
 class AnimatorRevealFragment : Fragment() {
 
-    private var isShown = true
     private var radius = 0f
 
     override fun onCreateView(
@@ -32,64 +34,87 @@ class AnimatorRevealFragment : Fragment() {
         view.doOnLayout {
             radius = it.diagonalLength()
         }
-        fab.setOnClickListener {
-            if (isShown) {
-                isShown = false
-                hideContents()
+        unfold.setOnClickListener {
+            if (it.isSelected) {
+                it.isSelected = false
+                cardRevealView.foldMenu()
             } else {
-                isShown = true
-                showContents()
+                it.isSelected = true
+                cardRevealView.unfoldMenu()
+            }
+        }
+        fab.setOnClickListener {
+            if (it.isSelected) {
+                it.isSelected = false
+                revealView.hideContents()
+            } else {
+                it.isSelected = true
+                revealView.showContents()
             }
         }
     }
 
-    private fun hideContents() {
-        fab.isSelected = true
+    private fun CircularRevealLinearLayout.unfoldMenu() {
+        visibility = View.VISIBLE
+        createCircularRevealCompatOf(unfold, 0f, radius) {
+            duration = 500
+        }.start()
+    }
 
-        revealView.visibility = View.VISIBLE
-        revealView.createCircularRevealTo(fab, radius) {
+    private fun CircularRevealLinearLayout.foldMenu() {
+        createCircularRevealCompatOf(unfold, radius, 0f) {
+            duration = 500
+            doOnEnd {
+                visibility = View.GONE
+            }
+        }.start()
+    }
+
+    private fun View.showContents() {
+        visibility = View.VISIBLE
+        createCircularRevealOf(fab, 0f, radius) {
             duration = 300
             interpolator = Interpolators.DECELERATE
         }.start()
     }
 
-    private fun showContents() {
-        fab.isSelected = false
-
-        revealView.createCircularRevealFrom(fab, radius) {
+    private fun View.hideContents() {
+        createCircularRevealOf(fab, radius, 0f) {
             duration = 300
             interpolator = Interpolators.ACCELERATE
             doOnEnd {
-                revealView.visibility = View.GONE
+                visibility = View.GONE
             }
         }.start()
     }
 
-    private inline fun View.createCircularRevealTo(
+    private inline fun View.createCircularRevealOf(
         target: View,
-        radius: Float,
+        startRadius: Float,
+        endRadius: Float,
         block: Animator.() -> Unit
     ): Animator {
         return ViewAnimationUtils.createCircularReveal(
             this,
             target.centerX(),
             target.centerY(),
-            0f,
-            radius
+            startRadius,
+            endRadius
         ).apply(block)
     }
 
-    private inline fun View.createCircularRevealFrom(
+    private inline fun CircularRevealWidget.createCircularRevealCompatOf(
         target: View,
-        radius: Float,
+        startRadius: Float,
+        endRadius: Float,
         block: Animator.() -> Unit
     ): Animator {
-        return ViewAnimationUtils.createCircularReveal(
+        return CircularRevealCompat.createCircularReveal(
             this,
-            target.centerX(),
-            target.centerY(),
-            radius,
-            0f
+            target.centerX().toFloat(),
+            target.centerY().toFloat(),
+            startRadius,
+            endRadius
         ).apply(block)
     }
 
