@@ -19,13 +19,27 @@ class HomeListAdapter(
 ) : RecyclerView.Adapter<HomeListAdapter.ViewHolder>() {
 
     private val items = listOf(
-        HomeItem(R.drawable.ic_interpolator, R.string.title_interpolator) { actionToInterpolator() },
-        HomeItem(R.drawable.ic_drawable, R.string.title_drawable) { actionToDrawable() },
-        HomeItem(R.drawable.ic_drawable, R.string.title_drawable_notification) { actionToDrawableNotification() },
-        HomeItem(R.drawable.ic_view_animation, R.string.title_view_animation) { actionToViewAnimation() },
-        HomeItem(R.drawable.ic_view_property, R.string.title_view_property) { actionToViewProperty() },
-        HomeItem(R.drawable.ic_animator, R.string.title_animator) { actionToAnimator() },
-        HomeItem(R.drawable.ic_spring, R.string.title_spring) { actionToSpring() }
+        HomeItem(R.drawable.ic_interpolator, R.string.title_interpolator) {
+            actionToInterpolator()
+        },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable) {
+            actionToDrawable()
+        },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable_notification) {
+            actionToDrawableNotification()
+        },
+        HomeItem(R.drawable.ic_view_animation, R.string.title_view_animation) {
+            actionToViewAnimation()
+        },
+        HomeItem(R.drawable.ic_view_property, R.string.title_view_property) {
+            actionToViewProperty()
+        },
+        HomeItem(R.drawable.ic_animator, R.string.title_animator) {
+            actionToAnimator()
+        },
+        HomeItem(R.drawable.ic_spring, R.string.title_spring) {
+            actionToSpring()
+        }
     )
 
     init {
@@ -33,13 +47,14 @@ class HomeListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
-        ).apply {
-            itemView.setOnClickListener {
-                getItem(adapterPosition)?.run(listener)
+        return LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_home, parent, false)
+            .let { ViewHolder(it) }
+            .apply {
+                itemView.setOnClickListener {
+                    getItem(adapterPosition)?.run(listener)
+                }
             }
-        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
