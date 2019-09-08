@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import soup.animation.sample.MainGraphDirections.Companion.actionToAnimator
+import soup.animation.sample.MainGraphDirections.Companion.actionToAnimatorReveal
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableNotification
 import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
@@ -36,6 +37,9 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_animator, R.string.title_animator) {
             actionToAnimator()
+        },
+        HomeItem(R.drawable.ic_animator, R.string.title_animator_reveal) {
+            actionToAnimatorReveal()
         },
         HomeItem(R.drawable.ic_spring, R.string.title_spring) {
             actionToSpring()

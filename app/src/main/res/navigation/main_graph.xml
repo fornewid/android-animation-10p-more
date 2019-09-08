@@ -56,6 +56,21 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- Animator (Circular Reveal) -->
+
+    <fragment
+        android:id="@+id/animator_reveal"
+        android:name="soup.animation.sample.animator_reveal.AnimatorRevealFragment"
+        tools:layout="@layout/fragment_animator_reveal" />
+
+    <action
+        android:id="@+id/action_to_animator_reveal"
+        app:destination="@id/animator_reveal"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
     <!-- Drawable Animation -->
 
     <fragment
@@ -86,7 +101,7 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
-    <!-- View Animation -->
+    <!-- ViewPropertyAnimator -->
 
     <fragment
         android:id="@+id/view_property"
@@ -116,7 +131,7 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
-    <!-- Spring Animation -->
+    <!-- SpringAnimation -->
 
     <fragment
         android:id="@+id/spring"

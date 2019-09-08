@@ -7,5 +7,6 @@
     <string name="title_view_animation">View Animation</string>
     <string name="title_view_property">ViewPropertyAnimator</string>
     <string name="title_animator">Animator</string>
+    <string name="title_animator_reveal">Animator (Circular Reveal)</string>
     <string name="title_spring">SpringAnimation</string>
 </resources>
