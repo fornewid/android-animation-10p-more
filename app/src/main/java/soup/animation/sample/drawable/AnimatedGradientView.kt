@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.View
+import android.view.animation.LinearInterpolator
 
 class AnimatedGradientView @JvmOverloads constructor(
     context: Context,
@@ -15,13 +16,15 @@ class AnimatedGradientView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : View(context, attrs, defStyle) {
 
-    private val startColor = Color.RED
-    private val centerColor = Color.GREEN
-    private val endColor = Color.BLUE
+    private val colors = intArrayOf(
+        Color.RED,
+        Color.GREEN,
+        Color.BLUE
+    )
 
     private val drawable = GradientDrawable(
         GradientDrawable.Orientation.BR_TL,
-        intArrayOf(startColor, endColor)
+        colors.take(2).toIntArray()
     )
     private val animator: Animator = createGradationAnimator(drawable)
 
@@ -58,33 +61,23 @@ class AnimatedGradientView @JvmOverloads constructor(
     }
 
     private fun createGradationAnimator(gradationDrawable: GradientDrawable): Animator {
-        return ValueAnimator.ofFloat(0f, 3f).apply {
+        val max = colors.size
+        return ValueAnimator.ofFloat(0f, max.toFloat()).apply {
             val evaluator = ArgbEvaluator()
+            interpolator = LinearInterpolator()
             duration = 3_000L
             repeatCount = ValueAnimator.INFINITE
             repeatMode = ValueAnimator.RESTART
             addUpdateListener {
-                val fraction = it.animatedValue as Float
-                gradationDrawable.colors = when {
-                    fraction <= 1f -> intArrayOf(
-                        evaluator.evaluate(fraction, startColor, centerColor) as Int,
-                        evaluator.evaluate(fraction, centerColor, endColor) as Int
-                    )
-                    fraction <= 2f -> {
-                        val fraction = fraction - 1
-                        intArrayOf(
-                            evaluator.evaluate(fraction, centerColor, endColor) as Int,
-                            evaluator.evaluate(fraction, endColor, startColor) as Int
-                        )
-                    }
-                    else -> {
-                        val fraction = fraction - 2
-                        intArrayOf(
-                            evaluator.evaluate(fraction, endColor, startColor) as Int,
-                            evaluator.evaluate(fraction, startColor, centerColor) as Int
-                        )
-                    }
-                }
+                val index = (it.animatedValue as Float).toInt()
+                val fraction = it.animatedValue as Float - index
+                val start = colors[index % max]
+                val center = colors[(index + 1) % max]
+                val end = colors[(index + 2) % max]
+                gradationDrawable.colors = intArrayOf(
+                    evaluator.evaluate(fraction, start, center) as Int,
+                    evaluator.evaluate(fraction, center, end) as Int
+                )
             }
         }
     }
