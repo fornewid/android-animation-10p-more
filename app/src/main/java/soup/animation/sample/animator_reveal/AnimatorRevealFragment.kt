@@ -43,6 +43,9 @@ class AnimatorRevealFragment : Fragment() {
                 cardRevealView.unfoldMenu()
             }
         }
+        dialogFab.setOnClickListener {
+            AnimatorRevealDialogFragment().show(childFragmentManager, null)
+        }
         fab.setOnClickListener {
             if (it.isSelected) {
                 it.isSelected = false
