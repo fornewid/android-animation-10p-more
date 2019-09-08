@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_interpolator">Interpolator</string>
     <string name="title_drawable">Drawable Animation</string>
+    <string name="title_drawable_notification">Drawable Animation (Notification)</string>
     <string name="title_view_animation">View Animation</string>
     <string name="title_view_property">ViewPropertyAnimator</string>
     <string name="title_animator">Animator</string>
