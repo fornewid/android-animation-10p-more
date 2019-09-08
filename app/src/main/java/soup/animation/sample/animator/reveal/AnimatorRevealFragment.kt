@@ -1,4 +1,4 @@
-package soup.animation.sample.animator_reveal
+package soup.animation.sample.animator.reveal
 
 import android.animation.Animator
 import android.os.Bundle
@@ -44,7 +44,8 @@ class AnimatorRevealFragment : Fragment() {
             }
         }
         dialogFab.setOnClickListener {
-            AnimatorRevealDialogFragment().show(childFragmentManager, null)
+            AnimatorRevealDialogFragment()
+                .show(childFragmentManager, null)
         }
         fab.setOnClickListener {
             if (it.isSelected) {

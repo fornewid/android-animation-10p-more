@@ -1,4 +1,4 @@
-package soup.animation.sample.drawable_notification
+package soup.animation.sample.drawable.notification
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

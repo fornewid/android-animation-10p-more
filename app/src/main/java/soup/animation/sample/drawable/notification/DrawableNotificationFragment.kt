@@ -1,4 +1,4 @@
-package soup.animation.sample.drawable_notification
+package soup.animation.sample.drawable.notification
 
 import android.app.NotificationManager
 import android.content.Context
@@ -31,7 +31,9 @@ class DrawableNotificationFragment : Fragment() {
 
     private fun Context.showNotification() {
         val notification = NotificationCompat
-            .Builder(this, NotificationChannels.NOTIFICATION)
+            .Builder(this,
+                NotificationChannels.NOTIFICATION
+            )
             .setContentTitle("AnimationDrawable")
             .setContentText("Animated icon will be shown!")
             .setSmallIcon(R.drawable.stat_sys_download)

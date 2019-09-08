@@ -1,7 +1,7 @@
 package soup.animation.sample
 
 import android.app.Application
-import soup.animation.sample.drawable_notification.NotificationChannels
+import soup.animation.sample.drawable.notification.NotificationChannels
 import timber.log.Timber
 
 class SampleApplication : Application() {

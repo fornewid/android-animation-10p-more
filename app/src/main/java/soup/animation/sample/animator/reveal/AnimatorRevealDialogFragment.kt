@@ -1,4 +1,4 @@
-package soup.animation.sample.animator_reveal
+package soup.animation.sample.animator.reveal
 
 import android.animation.Animator
 import android.app.Dialog

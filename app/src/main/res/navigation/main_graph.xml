@@ -60,7 +60,7 @@
 
     <fragment
         android:id="@+id/animator_reveal"
-        android:name="soup.animation.sample.animator_reveal.AnimatorRevealFragment"
+        android:name="soup.animation.sample.animator.reveal.AnimatorRevealFragment"
         tools:layout="@layout/fragment_animator_reveal" />
 
     <action
@@ -90,7 +90,7 @@
 
     <fragment
         android:id="@+id/drawable_notification"
-        android:name="soup.animation.sample.drawable_notification.DrawableNotificationFragment"
+        android:name="soup.animation.sample.drawable.notification.DrawableNotificationFragment"
         tools:layout="@layout/fragment_drawable_notification" />
 
     <action
