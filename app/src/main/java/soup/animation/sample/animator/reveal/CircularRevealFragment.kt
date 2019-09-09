@@ -17,7 +17,7 @@ import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
 import kotlin.math.hypot
 
-class AnimatorRevealFragment : Fragment() {
+class CircularRevealFragment : Fragment() {
 
     private var radius = 0f
 
@@ -44,7 +44,7 @@ class AnimatorRevealFragment : Fragment() {
             }
         }
         dialogFab.setOnClickListener {
-            AnimatorRevealDialogFragment()
+            CircularRevealDialogFragment()
                 .show(childFragmentManager, null)
         }
         fab.setOnClickListener {

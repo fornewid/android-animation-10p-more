@@ -60,12 +60,27 @@
 
     <fragment
         android:id="@+id/animator_reveal"
-        android:name="soup.animation.sample.animator.reveal.AnimatorRevealFragment"
+        android:name="soup.animation.sample.animator.reveal.CircularRevealFragment"
         tools:layout="@layout/fragment_animator_reveal" />
 
     <action
         android:id="@+id/action_to_animator_reveal"
         app:destination="@id/animator_reveal"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Animator (LayoutTransition) -->
+
+    <fragment
+        android:id="@+id/animator_layout_transition"
+        android:name="soup.animation.sample.animator.layout.LayoutTransitionFragment"
+        tools:layout="@layout/fragment_transition" />
+
+    <action
+        android:id="@+id/action_to_layout_transition"
+        app:destination="@id/animator_layout_transition"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
@@ -90,7 +105,7 @@
 
     <fragment
         android:id="@+id/drawable_notification"
-        android:name="soup.animation.sample.drawable.notification.DrawableNotificationFragment"
+        android:name="soup.animation.sample.drawable.notification.NotificationFragment"
         tools:layout="@layout/fragment_drawable_notification" />
 
     <action
@@ -141,6 +156,21 @@
     <action
         android:id="@+id/action_to_spring"
         app:destination="@id/spring"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Transition -->
+
+    <fragment
+        android:id="@+id/transition"
+        android:name="soup.animation.sample.transition.TransitionFragment"
+        tools:layout="@layout/fragment_transition" />
+
+    <action
+        android:id="@+id/action_to_transition"
+        app:destination="@id/transition"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"

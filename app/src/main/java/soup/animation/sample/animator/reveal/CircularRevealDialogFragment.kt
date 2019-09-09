@@ -11,7 +11,7 @@ import androidx.core.animation.doOnEnd
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlin.math.hypot
 
-class AnimatorRevealDialogFragment : AppCompatDialogFragment() {
+class CircularRevealDialogFragment : AppCompatDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return MaterialAlertDialogBuilder(context)

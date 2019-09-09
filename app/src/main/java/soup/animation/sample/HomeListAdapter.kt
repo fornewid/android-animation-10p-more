@@ -11,7 +11,9 @@ import soup.animation.sample.MainGraphDirections.Companion.actionToAnimatorRevea
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableNotification
 import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
+import soup.animation.sample.MainGraphDirections.Companion.actionToLayoutTransition
 import soup.animation.sample.MainGraphDirections.Companion.actionToSpring
+import soup.animation.sample.MainGraphDirections.Companion.actionToTransition
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewAnimation
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewProperty
 
@@ -38,11 +40,17 @@ class HomeListAdapter(
         HomeItem(R.drawable.ic_animator, R.string.title_animator) {
             actionToAnimator()
         },
-        HomeItem(R.drawable.ic_animator, R.string.title_animator_reveal) {
+        HomeItem(R.drawable.ic_animator, R.string.title_animator_circular_reveal) {
             actionToAnimatorReveal()
+        },
+        HomeItem(R.drawable.ic_animator, R.string.title_animator_layout_transition) {
+            actionToLayoutTransition()
         },
         HomeItem(R.drawable.ic_spring, R.string.title_spring) {
             actionToSpring()
+        },
+        HomeItem(R.drawable.ic_transition, R.string.title_transition) {
+            actionToTransition()
         }
     )
 
