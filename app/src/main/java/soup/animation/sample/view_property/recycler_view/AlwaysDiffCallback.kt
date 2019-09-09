@@ -1,4 +1,4 @@
-package soup.animation.sample.animator.recyclerview
+package soup.animation.sample.view_property.recycler_view
 
 import androidx.recyclerview.widget.DiffUtil
 

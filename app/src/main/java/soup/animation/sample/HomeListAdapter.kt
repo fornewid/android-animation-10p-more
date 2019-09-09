@@ -38,6 +38,9 @@ class HomeListAdapter(
         HomeItem(R.drawable.ic_view_property, R.string.title_view_property) {
             actionToViewProperty()
         },
+        HomeItem(R.drawable.ic_view_property, R.string.title_view_property_recycler_view) {
+            actionToRecyclerView()
+        },
         HomeItem(R.drawable.ic_animator, R.string.title_animator) {
             actionToAnimator()
         },
@@ -46,9 +49,6 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_animator, R.string.title_animator_layout_transition) {
             actionToLayoutTransition()
-        },
-        HomeItem(R.drawable.ic_animator, R.string.title_animator_recyclerview) {
-            actionToRecyclerView()
         },
         HomeItem(R.drawable.ic_spring, R.string.title_spring) {
             actionToSpring()

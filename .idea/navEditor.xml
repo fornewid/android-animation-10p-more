@@ -38,6 +38,11 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_recycler_view">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_spring">
                     <value>
                       <LayoutPositions />
@@ -71,6 +76,18 @@
                     </value>
                   </entry>
                   <entry key="animator_layout_transition">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="animator_recycler_view">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">

@@ -86,21 +86,6 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
-    <!-- Animator (RecyclerView) -->
-
-    <fragment
-        android:id="@+id/animator_recycler_view"
-        android:name="soup.animation.sample.animator.recyclerview.RecyclerViewFragment"
-        tools:layout="@layout/fragment_animator_recycler_view" />
-
-    <action
-        android:id="@+id/action_to_recycler_view"
-        app:destination="@id/animator_recycler_view"
-        app:enterAnim="@anim/slide_in_right"
-        app:exitAnim="@anim/slide_out_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right" />
-
     <!-- Drawable Animation -->
 
     <fragment
@@ -141,6 +126,21 @@
     <action
         android:id="@+id/action_to_view_property"
         app:destination="@id/view_property"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- ViewPropertyAnimator (RecyclerView) -->
+
+    <fragment
+        android:id="@+id/view_property_recycler_view"
+        android:name="soup.animation.sample.view_property.recycler_view.RecyclerViewFragment"
+        tools:layout="@layout/fragment_view_property_recycler_view" />
+
+    <action
+        android:id="@+id/action_to_recycler_view"
+        app:destination="@id/view_property_recycler_view"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
