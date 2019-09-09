@@ -1,4 +1,4 @@
-package soup.animation.sample.view_property.recycler_view
+package androidx.recyclerview.widget.ext
 
 import androidx.recyclerview.widget.DiffUtil
 

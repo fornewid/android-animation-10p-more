@@ -176,6 +176,21 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- SpringAnimation (RecyclerView) -->
+
+    <fragment
+        android:id="@+id/spring_recycler_view"
+        android:name="soup.animation.sample.spring.recycler_view.RecyclerViewFragment"
+        tools:layout="@layout/fragment_spring_recycler_view" />
+
+    <action
+        android:id="@+id/action_to_spring_recycler_view"
+        app:destination="@id/spring_recycler_view"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
     <!-- Transition -->
 
     <fragment

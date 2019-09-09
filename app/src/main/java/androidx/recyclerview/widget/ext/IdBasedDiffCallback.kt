@@ -1,10 +1,10 @@
-package soup.animation.sample.view_property.recycler_view
+package androidx.recyclerview.widget.ext
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 
 class IdBasedDiffCallback<T>(
-    private val id: T.() -> Int
+    private val id: T.() -> String
 ) : DiffUtil.ItemCallback<T>() {
 
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {

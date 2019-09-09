@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="@string/title_view_property_recycler_view" />
+            app:title="@string/title_spring_recycler_view" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -23,10 +23,13 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_home" />
+        app:spanCount="3"
+        tools:listitem="@layout/item_recyclerview_grid" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -35,6 +38,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_shuffle" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

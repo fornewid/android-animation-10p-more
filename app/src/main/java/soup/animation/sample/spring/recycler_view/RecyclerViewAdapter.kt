@@ -1,9 +1,9 @@
-package soup.animation.sample.view_property.recycler_view
+package soup.animation.sample.spring.recycler_view
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ext.IdBasedDiffCallback
@@ -13,21 +13,26 @@ class RecyclerViewAdapter : ListAdapter<Item, RecyclerViewAdapter.ViewHolder>(
     IdBasedDiffCallback { id.toString() }
 ) {
 
-    private val list = arrayListOf<Item>()
+    private val list = listOf(
+        Item(1, Color.RED),
+        Item(2, Color.GREEN),
+        Item(3, Color.BLUE),
+        Item(4, Color.DKGRAY),
+        Item(5, Color.MAGENTA),
+        Item(6, Color.YELLOW),
+        Item(7, Color.CYAN),
+        Item(8, Color.BLACK),
+        Item(9, Color.LTGRAY)
+    )
+
+    init {
+        shuffle()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recyclerview, parent, false)
+            .inflate(R.layout.item_recyclerview_grid, parent, false)
             .let { ViewHolder(it) }
-            .apply {
-                itemView.setOnClickListener {
-                    getItemOrNull(adapterPosition)?.let {
-                        if (list.remove(it)) {
-                            submitList(ArrayList(list))
-                        }
-                    }
-                }
-            }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -38,17 +43,16 @@ class RecyclerViewAdapter : ListAdapter<Item, RecyclerViewAdapter.ViewHolder>(
         return currentList.getOrNull(position)
     }
 
-    fun addItemToLast() {
-        list.add(Item(id = list.lastOrNull()?.id?.plus(1) ?: 0))
-        submitList(ArrayList(list))
+    fun shuffle() {
+        submitList(list.shuffled())
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val textView: TextView = view.findViewById(R.id.text)
+        private val colorView: View = view.findViewById(R.id.colorView)
 
         fun bind(item: Item) {
-            textView.text = item.text
+            colorView.setBackgroundColor(item.backgroundColor)
         }
     }
 }
