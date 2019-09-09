@@ -9,6 +9,7 @@
     <string name="title_animator">Animator</string>
     <string name="title_animator_circular_reveal">Animator (Circular Reveal)</string>
     <string name="title_animator_layout_transition">Animator (LayoutTransition)</string>
+    <string name="title_animator_recyclerview">Animator (RecyclerView)</string>
     <string name="title_spring">SpringAnimation</string>
     <string name="title_transition">Transition</string>
 </resources>

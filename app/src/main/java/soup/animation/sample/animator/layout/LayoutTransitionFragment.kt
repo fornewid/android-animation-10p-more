@@ -39,7 +39,7 @@ class LayoutTransitionFragment : Fragment() {
         }
         fab.setOnClickListener {
             container.addView(
-                container.inflate(R.layout.item_home).apply {
+                container.inflate(R.layout.item_recyclerview).apply {
                     icon.setImageResource(R.drawable.ic_spring)
                     text.text = "Item ${container.size + 1}"
                 }

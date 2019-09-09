@@ -12,6 +12,7 @@ import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableNotification
 import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
 import soup.animation.sample.MainGraphDirections.Companion.actionToLayoutTransition
+import soup.animation.sample.MainGraphDirections.Companion.actionToRecyclerView
 import soup.animation.sample.MainGraphDirections.Companion.actionToSpring
 import soup.animation.sample.MainGraphDirections.Companion.actionToTransition
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewAnimation
@@ -45,6 +46,9 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_animator, R.string.title_animator_layout_transition) {
             actionToLayoutTransition()
+        },
+        HomeItem(R.drawable.ic_animator, R.string.title_animator_recyclerview) {
+            actionToRecyclerView()
         },
         HomeItem(R.drawable.ic_spring, R.string.title_spring) {
             actionToSpring()

@@ -33,7 +33,17 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_layout_transition">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_spring">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="action_to_transition">
                     <value>
                       <LayoutPositions />
                     </value>
@@ -49,6 +59,18 @@
                     </value>
                   </entry>
                   <entry key="animator">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="animator_layout_transition">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -148,6 +170,18 @@
                           <Point>
                             <option name="x" value="256" />
                             <option name="y" value="368" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="transition">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
