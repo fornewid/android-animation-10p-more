@@ -19,7 +19,7 @@ class AnimatorFragment : Fragment() {
     private var maxTranslationX: Float = 0f
     private var maxTranslationY: Float = 0f
 
-    private val animator = ValueAnimator.ofFloat(0f, 1f).apply {
+    private val animator = ValueAnimator.ofFloat(0f, 2f, 1f).apply {
         repeatMode = ValueAnimator.REVERSE
         repeatCount = ValueAnimator.INFINITE
         duration = 1_000L
@@ -56,13 +56,13 @@ class AnimatorFragment : Fragment() {
 
         view.doOnLayout {
             maxTranslationX = view.measuredWidth - resources.getDimension(R.dimen.icon_size)
-            maxTranslationY = resources.getDimension(R.dimen.icon_size) * -2
+            maxTranslationY = resources.getDimension(R.dimen.icon_size).unaryMinus()
 
             animator.doOnRepeat {
                 facingButton.performClick()
             }
             animator.addUpdateListener {
-                updateUi(it.animatedValue as Float)
+                updateUi(it.animatedFraction, it.animatedValue as Float)
             }
             animator.start()
         }
@@ -75,14 +75,14 @@ class AnimatorFragment : Fragment() {
         super.onDestroyView()
     }
 
-    private fun updateUi(fraction: Float) {
+    private fun updateUi(fraction: Float, value: Float) {
         icon.run {
             rotation = lerp(0f, 360f, fraction)
             alpha = lerp(1f, .5f, fraction)
             scaleX = lerp(1f, 2f, fraction)
             scaleY = lerp(1f, .5f, fraction)
             translationX = lerp(0f, maxTranslationX, fraction)
-            translationY = lerp(0f, maxTranslationY, fraction)
+            translationY = lerp(0f, maxTranslationY, value)
         }
         bug.translationX = lerp(0f, maxTranslationX, fraction)
     }
