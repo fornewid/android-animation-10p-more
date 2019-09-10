@@ -37,6 +37,7 @@ class LoadingFragment : Fragment() {
             toggleVisibility()
         }
         animator.start()
+        stage.startStageAnimation(1f)
     }
 
     override fun onDestroyView() {

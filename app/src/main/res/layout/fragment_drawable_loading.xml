@@ -65,6 +65,15 @@
             app:layout_constraintStart_toEndOf="@id/contentLoading"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <soup.animation.sample.drawable.loading.StageView
+            android:id="@+id/stage"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginBottom="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
