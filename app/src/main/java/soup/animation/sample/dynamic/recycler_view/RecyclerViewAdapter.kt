@@ -1,4 +1,4 @@
-package soup.animation.sample.spring.recycler_view
+package soup.animation.sample.dynamic.recycler_view
 
 import android.graphics.Color
 import android.view.LayoutInflater

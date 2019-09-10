@@ -1,4 +1,4 @@
-package soup.animation.sample.spring
+package soup.animation.sample.dynamic.spring
 
 import android.animation.ValueAnimator
 import android.os.Bundle
@@ -12,7 +12,7 @@ import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 import androidx.dynamicanimation.animation.withSpringForceProperties
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_spring.*
+import kotlinx.android.synthetic.main.fragment_dynamic_spring.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
 
@@ -33,7 +33,7 @@ class SpringFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_spring, container, false)
+        return inflater.inflate(R.layout.fragment_dynamic_spring, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

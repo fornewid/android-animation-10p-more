@@ -1,4 +1,4 @@
-package soup.animation.sample.spring.recycler_view
+package soup.animation.sample.dynamic.recycler_view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.SpringSlideInAnimator
-import kotlinx.android.synthetic.main.fragment_spring_recycler_view.*
+import kotlinx.android.synthetic.main.fragment_dynamic_spring_recycler_view.*
 import soup.animation.sample.R
 
 class RecyclerViewFragment : Fragment() {
@@ -16,7 +16,7 @@ class RecyclerViewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_spring_recycler_view, container, false)
+        return inflater.inflate(R.layout.fragment_dynamic_spring_recycler_view, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -206,12 +206,27 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- FlingAnimation -->
+
+    <fragment
+        android:id="@+id/fling"
+        android:name="soup.animation.sample.dynamic.fling.FlingFragment"
+        tools:layout="@layout/fragment_dynamic_fling" />
+
+    <action
+        android:id="@+id/action_to_fling"
+        app:destination="@id/fling"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
     <!-- SpringAnimation -->
 
     <fragment
         android:id="@+id/spring"
-        android:name="soup.animation.sample.spring.SpringFragment"
-        tools:layout="@layout/fragment_spring" />
+        android:name="soup.animation.sample.dynamic.spring.SpringFragment"
+        tools:layout="@layout/fragment_dynamic_spring" />
 
     <action
         android:id="@+id/action_to_spring"
@@ -225,8 +240,8 @@
 
     <fragment
         android:id="@+id/spring_recycler_view"
-        android:name="soup.animation.sample.spring.recycler_view.RecyclerViewFragment"
-        tools:layout="@layout/fragment_spring_recycler_view" />
+        android:name="soup.animation.sample.dynamic.recycler_view.RecyclerViewFragment"
+        tools:layout="@layout/fragment_dynamic_spring_recycler_view" />
 
     <action
         android:id="@+id/action_to_spring_recycler_view"

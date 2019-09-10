@@ -1,4 +1,4 @@
-package soup.animation.sample.drawable;
+package soup.animation.sample.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

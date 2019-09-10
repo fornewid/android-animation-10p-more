@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/icon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
@@ -63,7 +63,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/bug"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"

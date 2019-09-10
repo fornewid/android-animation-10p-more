@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="@string/title_view_property" />
+            app:title="@string/title_dynamic_fling" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,11 +27,13 @@
             android:id="@+id/icon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:background="?selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:src="@drawable/ic_android"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

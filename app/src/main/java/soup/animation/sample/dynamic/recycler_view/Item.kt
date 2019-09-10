@@ -1,4 +1,4 @@
-package soup.animation.sample.spring.recycler_view
+package soup.animation.sample.dynamic.recycler_view
 
 data class Item(
     val id: Int,

@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="@string/title_spring" />
+            app:title="@string/title_dynamic_spring" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/icon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/bug"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"

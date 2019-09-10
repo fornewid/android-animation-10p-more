@@ -73,7 +73,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/battery" />
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/animatedVector"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"

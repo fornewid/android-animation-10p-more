@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
-        <soup.animation.sample.drawable.CheckedImageView
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/icon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
