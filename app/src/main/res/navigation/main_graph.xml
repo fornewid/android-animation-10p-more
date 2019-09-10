@@ -101,6 +101,51 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- Drawable Animation (Ripple) -->
+
+    <fragment
+        android:id="@+id/drawable_ripple"
+        android:name="soup.animation.sample.drawable.ripple.RippleFragment"
+        tools:layout="@layout/fragment_drawable_ripple" />
+
+    <action
+        android:id="@+id/action_to_drawable_ripple"
+        app:destination="@id/drawable_ripple"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Drawable Animation (Loading) -->
+
+    <fragment
+        android:id="@+id/drawable_loading"
+        android:name="soup.animation.sample.drawable.loading.LoadingFragment"
+        tools:layout="@layout/fragment_drawable_loading" />
+
+    <action
+        android:id="@+id/action_to_drawable_loading"
+        app:destination="@id/drawable_loading"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Drawable Animation (Gradient) -->
+
+    <fragment
+        android:id="@+id/drawable_gradient"
+        android:name="soup.animation.sample.drawable.gradient.GradientFragment"
+        tools:layout="@layout/fragment_drawable_gradient" />
+
+    <action
+        android:id="@+id/action_to_drawable_gradient"
+        app:destination="@id/drawable_gradient"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
     <!-- Drawable Animation (Notification) -->
 
     <fragment

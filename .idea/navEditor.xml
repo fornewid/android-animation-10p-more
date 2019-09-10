@@ -23,6 +23,16 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_drawable_gradient">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="action_to_drawable_loading">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_drawable_notification">
                     <value>
                       <LayoutPositions />
@@ -105,6 +115,30 @@
                     </value>
                   </entry>
                   <entry key="drawable">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="drawable_gradient">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="drawable_loading">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">

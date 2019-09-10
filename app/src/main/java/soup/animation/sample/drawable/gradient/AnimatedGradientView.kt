@@ -1,4 +1,4 @@
-package soup.animation.sample.drawable
+package soup.animation.sample.drawable.gradient
 
 import android.animation.Animator
 import android.animation.ArgbEvaluator

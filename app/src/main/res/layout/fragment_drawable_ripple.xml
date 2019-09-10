@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="@string/title_drawable" />
+            app:title="@string/title_drawable_ripple" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -23,65 +23,65 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <soup.animation.sample.drawable.AnimatedImageView
-            android:id="@+id/battery"
+        <ImageView
+            android:id="@+id/rippleNormal"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_battery_anim"
+            android:src="@drawable/ic_touch_app"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <soup.animation.sample.drawable.AnimatedImageView
-            android:id="@+id/battery_charging"
+        <ImageView
+            android:id="@+id/rippleBorderless"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_battery_charging_anim"
-            app:layout_constraintStart_toEndOf="@id/battery"
+            android:src="@drawable/ic_touch_app"
+            app:layout_constraintStart_toEndOf="@id/rippleNormal"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <soup.animation.sample.drawable.AnimatedImageView
-            android:id="@+id/batteryClip"
+        <ImageView
+            android:id="@+id/rippleWrong"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_battery_clip"
-            app:layout_constraintStart_toEndOf="@id/battery_charging"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_rectangle"
+            app:layout_constraintStart_toEndOf="@id/rippleBorderless"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <soup.animation.sample.drawable.AnimatedImageView
-            android:id="@+id/batteryChargingClip"
+        <ImageView
+            android:id="@+id/rippleCustom1"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_battery_charging_clip"
-            app:layout_constraintStart_toEndOf="@id/batteryClip"
+            android:background="@drawable/ic_rectangle_ripple1"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toEndOf="@id/rippleWrong"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <soup.animation.sample.drawable.AnimatedImageView
-            android:id="@+id/animatedRotate"
+        <ImageView
+            android:id="@+id/rippleCustom2"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_rotate"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/battery" />
-
-        <soup.animation.sample.drawable.CheckedImageView
-            android:id="@+id/animatedVector"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_margin="4dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/btn_check_material_anim"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
+            android:background="@drawable/ic_rectangle_ripple2"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toEndOf="@id/rippleCustom1"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

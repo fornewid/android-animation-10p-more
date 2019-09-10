@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import soup.animation.sample.MainGraphDirections.Companion.actionToAnimator
 import soup.animation.sample.MainGraphDirections.Companion.actionToAnimatorReveal
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableRipple
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableLoading
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableGradient
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableNotification
 import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
 import soup.animation.sample.MainGraphDirections.Companion.actionToLayoutTransition
@@ -29,6 +32,15 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_drawable, R.string.title_drawable) {
             actionToDrawable()
+        },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable_ripple) {
+            actionToDrawableRipple()
+        },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable_loading) {
+            actionToDrawableLoading()
+        },
+        HomeItem(R.drawable.ic_drawable, R.string.title_drawable_gradient) {
+            actionToDrawableGradient()
         },
         HomeItem(R.drawable.ic_drawable, R.string.title_drawable_notification) {
             actionToDrawableNotification()

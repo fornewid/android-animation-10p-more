@@ -1,8 +1,9 @@
-package soup.animation.sample.drawable
+package soup.animation.sample.drawable.gradient
 
 import android.content.Context
 import android.graphics.drawable.AnimationDrawable
 import android.util.AttributeSet
+import soup.animation.sample.drawable.AnimatedImageView
 
 class AnimatedFadeImageView @JvmOverloads constructor(
     context: Context,
