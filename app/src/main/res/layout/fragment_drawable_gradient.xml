@@ -40,6 +40,30 @@
             app:layout_constraintStart_toEndOf="@id/animatedGradientFade"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <soup.animation.sample.drawable.gradient.AnimatedGradientView
+            android:id="@+id/animatedGradientAnimator2"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientAnimator"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soup.animation.sample.drawable.gradient.AnimatedGradientView
+            android:id="@+id/animatedGradientAnimator3"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientAnimator2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soup.animation.sample.drawable.gradient.AnimatedBorderView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            app:borderWidth="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

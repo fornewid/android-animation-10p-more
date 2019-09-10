@@ -54,10 +54,10 @@ class LoadingFragment : Fragment() {
     }
 
     private fun ProgressBar.toggleVisible() {
-        if (isVisible) {
-            visibility = View.GONE
+        visibility = if (isVisible) {
+            View.GONE
         } else {
-            visibility = View.VISIBLE
+            View.VISIBLE
         }
     }
 

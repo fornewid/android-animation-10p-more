@@ -10,17 +10,21 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 
-class AnimatedGradientView @JvmOverloads constructor(
+open class AnimatedGradientView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : View(context, attrs, defStyle) {
 
-    private val colors = intArrayOf(
-        Color.RED,
-        Color.GREEN,
-        Color.BLUE
-    )
+    private val colors = createColors()
+
+    protected open fun createColors(): IntArray {
+        return intArrayOf(
+            Color.RED,
+            Color.GREEN,
+            Color.BLUE
+        )
+    }
 
     private val drawable = GradientDrawable(
         GradientDrawable.Orientation.BR_TL,
@@ -32,12 +36,12 @@ class AnimatedGradientView @JvmOverloads constructor(
         background = drawable
     }
 
-    public override fun onAttachedToWindow() {
+    override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         updateAnim()
     }
 
-    public override fun onDetachedFromWindow() {
+    override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         animator.cancel()
     }
