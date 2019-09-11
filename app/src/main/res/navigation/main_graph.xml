@@ -266,4 +266,19 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- 3rd Party -->
+
+    <fragment
+        android:id="@+id/third_party"
+        android:name="soup.animation.sample.third_party.ThirdPartyFragment"
+        tools:layout="@layout/fragment_third_party" />
+
+    <action
+        android:id="@+id/action_to_third_party"
+        app:destination="@id/third_party"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
 </navigation>

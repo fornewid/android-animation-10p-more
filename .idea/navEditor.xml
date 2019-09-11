@@ -63,6 +63,11 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_spring">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_spring_recycler_view">
                     <value>
                       <LayoutPositions />
@@ -232,6 +237,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="spring">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
