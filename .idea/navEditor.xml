@@ -63,12 +63,27 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_shared_elements">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="action_to_shared_elements_detail">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_spring">
                     <value>
                       <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="action_to_spring_recycler_view">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="action_to_third_party">
                     <value>
                       <LayoutPositions />
                     </value>
@@ -220,6 +235,30 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="shared_elements">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="shared_elements_detail">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="splash">
                     <value>
                       <LayoutPositions>
@@ -254,6 +293,18 @@
                     </value>
                   </entry>
                   <entry key="spring_recycler_view">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="third_party">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">

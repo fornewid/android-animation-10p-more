@@ -17,5 +17,7 @@
     <string name="title_dynamic_spring">SpringAnimation</string>
     <string name="title_dynamic_spring_recycler_view">SpringAnimation (RecyclerView)</string>
     <string name="title_transition">Transition</string>
+    <string name="title_shared_elements">SharedElements (Master)</string>
+    <string name="title_shared_elements_detail">SharedElements (Detail)</string>
     <string name="title_third_party">Third Party</string>
 </resources>

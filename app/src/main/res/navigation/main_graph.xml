@@ -266,6 +266,30 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- SharedElements -->
+
+    <fragment
+        android:id="@+id/shared_elements"
+        android:name="soup.animation.sample.shared_elements.SharedElementsFragment"
+        tools:layout="@layout/fragment_shared_elements" />
+
+    <action
+        android:id="@+id/action_to_shared_elements"
+        app:destination="@id/shared_elements"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <fragment
+        android:id="@+id/shared_elements_detail"
+        android:name="soup.animation.sample.shared_elements.SharedElementsDetailFragment"
+        tools:layout="@layout/fragment_shared_elements_detail" />
+
+    <action
+        android:id="@+id/action_to_shared_elements_detail"
+        app:destination="@id/shared_elements_detail" />
+
     <!-- 3rd Party -->
 
     <fragment

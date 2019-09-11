@@ -22,6 +22,7 @@ import soup.animation.sample.MainGraphDirections.Companion.actionToSpringRecycle
 import soup.animation.sample.MainGraphDirections.Companion.actionToTransition
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewAnimation
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewProperty
+import soup.animation.sample.MainGraphDirections.Companion.actionToSharedElements
 import soup.animation.sample.MainGraphDirections.Companion.actionToThirdParty
 
 class HomeListAdapter(
@@ -76,6 +77,9 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_transition, R.string.title_transition) {
             actionToTransition()
+        },
+        HomeItem(R.drawable.ic_shared_elements, R.string.title_shared_elements) {
+            actionToSharedElements()
         },
         HomeItem(R.drawable.ic_third_party, R.string.title_third_party) {
             actionToThirdParty()
