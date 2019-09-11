@@ -3,5 +3,6 @@
     <dimen name="icon_size">60dp</dimen>
     <dimen name="interpolator_view_size">180dp</dimen>
     <dimen name="interpolator_circle_radius">4dp</dimen>
+    <dimen name="bottom_navigation_height">80dp</dimen>
     <dimen name="gradient_clip_radius">16dp</dimen>
 </resources>

@@ -83,6 +83,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
 
+        <soup.animation.sample.widget.CheckedImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="24dp"
+            android:background="@drawable/ic_oval"
+            android:scaleType="centerInside"
+            android:src="@drawable/asld_star_event"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bottom_navigation_height"
+            android:layout_marginBottom="16dp"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_insetEdge="bottom"
+            app:menu="@menu/navigation" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

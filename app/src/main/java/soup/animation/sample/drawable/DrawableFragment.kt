@@ -48,6 +48,7 @@ class DrawableFragment : Fragment() {
 
     private fun updateRippleEffect() {
         animatedVector.toggle()
+        icon.toggle()
     }
 
     private fun updateUi(fraction: Float) {
