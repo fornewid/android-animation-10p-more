@@ -84,6 +84,39 @@
             app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
 
         <soup.animation.sample.widget.CheckedImageView
+            android:id="@+id/landscape"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:background="@color/android1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_landscape_to_auto_rotate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <soup.animation.sample.widget.CheckedImageView
+            android:id="@+id/portrait"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:background="@color/android1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_portrait_to_auto_rotate"
+            app:layout_constraintStart_toEndOf="@id/landscape"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <soup.animation.sample.widget.CheckedImageView
+            android:id="@+id/flashlight"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="4dp"
+            android:background="@color/android1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_signal_flashlight_disable"
+            app:layout_constraintStart_toEndOf="@id/portrait"
+            app:layout_constraintTop_toBottomOf="@id/animatedVector" />
+
+        <soup.animation.sample.widget.CheckedImageView
             android:id="@+id/batteryIcon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"

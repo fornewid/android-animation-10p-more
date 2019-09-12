@@ -1,11 +1,15 @@
 package soup.animation.sample.drawable
 
 import android.animation.ValueAnimator
+import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.core.animation.doOnRepeat
+import androidx.core.content.ContextCompat
 import androidx.core.view.postOnAnimationDelayed
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_drawable.*
@@ -52,6 +56,34 @@ class DrawableFragment : Fragment() {
         batteryIcon.performRippleEffect()
         batteryIcon.toggle()
         starIcon.toggle()
+
+        portrait.run {
+            if (isActivated) {
+                isActivated = false
+                setImageDrawableAndStart(R.drawable.ic_portrait_from_auto_rotate_animation)
+            } else {
+                isActivated = true
+                setImageDrawableAndStart(R.drawable.ic_portrait_to_auto_rotate_animation)
+            }
+        }
+        landscape.run {
+            if (isActivated) {
+                isActivated = false
+                setImageDrawableAndStart(R.drawable.ic_landscape_from_auto_rotate_animation)
+            } else {
+                isActivated = true
+                setImageDrawableAndStart(R.drawable.ic_landscape_to_auto_rotate_animation)
+            }
+        }
+        flashlight.run {
+            if (isActivated) {
+                isActivated = false
+                setImageDrawableAndStart(R.drawable.ic_signal_flashlight_enable_animation)
+            } else {
+                isActivated = true
+                setImageDrawableAndStart(R.drawable.ic_signal_flashlight_disable_animation)
+            }
+        }
     }
 
     private fun updateUi(fraction: Float) {
@@ -63,6 +95,14 @@ class DrawableFragment : Fragment() {
         isPressed = true
         postOnAnimationDelayed(50) {
             isPressed = false
+        }
+    }
+
+    private fun ImageView.setImageDrawableAndStart(@DrawableRes resId: Int) {
+        val drawable = ContextCompat.getDrawable(context, resId)
+        setImageDrawable(drawable)
+        if (drawable is Animatable) {
+            drawable.start()
         }
     }
 }
