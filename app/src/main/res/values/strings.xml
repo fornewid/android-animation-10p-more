@@ -13,6 +13,7 @@
     <string name="title_animator">Animator</string>
     <string name="title_animator_circular_reveal">Animator (Circular Reveal)</string>
     <string name="title_animator_layout_transition">Animator (LayoutTransition)</string>
+    <string name="title_sla">StateListAnimator</string>
     <string name="title_dynamic_fling">FlingAnimation</string>
     <string name="title_dynamic_spring">SpringAnimation</string>
     <string name="title_dynamic_spring_recycler_view">SpringAnimation (RecyclerView)</string>

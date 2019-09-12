@@ -5,4 +5,5 @@
     <dimen name="interpolator_circle_radius">4dp</dimen>
     <dimen name="bottom_navigation_height">80dp</dimen>
     <dimen name="gradient_clip_radius">16dp</dimen>
+    <dimen name="animator_sla_translation">16dp</dimen>
 </resources>

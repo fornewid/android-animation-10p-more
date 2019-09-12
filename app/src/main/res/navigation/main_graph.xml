@@ -76,11 +76,26 @@
     <fragment
         android:id="@+id/animator_layout_transition"
         android:name="soup.animation.sample.animator.layout.LayoutTransitionFragment"
-        tools:layout="@layout/fragment_transition" />
+        tools:layout="@layout/fragment_animator_layout_transition" />
 
     <action
         android:id="@+id/action_to_layout_transition"
         app:destination="@id/animator_layout_transition"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- StateListAnimator -->
+
+    <fragment
+        android:id="@+id/sla"
+        android:name="soup.animation.sample.sla.StateListAnimatorFragment"
+        tools:layout="@layout/fragment_sla" />
+
+    <action
+        android:id="@+id/action_to_sla"
+        app:destination="@id/sla"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
