@@ -1,6 +1,7 @@
 package soup.animation.sample.drawable.loading
 
 import android.animation.ValueAnimator
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_drawable_loading.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
+import soup.animation.sample.util.lerp
 
 class LoadingFragment : Fragment() {
 
@@ -20,7 +22,7 @@ class LoadingFragment : Fragment() {
         repeatMode = ValueAnimator.REVERSE
         repeatCount = ValueAnimator.INFINITE
         duration = 1_000L
-        interpolator = Interpolators.LINEAR
+        interpolator = Interpolators.ACCELERATE
     }
 
     override fun onCreateView(
@@ -36,14 +38,20 @@ class LoadingFragment : Fragment() {
         animator.doOnRepeat {
             toggleVisibility()
         }
+        animator.addUpdateListener {
+            loadingHorizontal.setProgress(it.animatedFraction)
+            loadingHorizontalCustom.setProgress(it.animatedFraction)
+            contentLoadingHorizontal.setProgress(it.animatedFraction)
+            contentLoadingHorizontalCustom.setProgress(it.animatedFraction)
+        }
         animator.start()
         stage.startStageAnimation(1f)
     }
 
     override fun onDestroyView() {
+        animator.cancel()
         animator.removeAllListeners()
         animator.removeAllUpdateListeners()
-        animator.cancel()
         super.onDestroyView()
     }
 
@@ -52,6 +60,14 @@ class LoadingFragment : Fragment() {
         loadingCustom.toggleVisible()
         contentLoading.showOrHide()
         contentLoadingCustom.showOrHide()
+    }
+
+    private fun ProgressBar.setProgress(fraction: Float) {
+        progress = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            lerp(min, max, fraction).toInt()
+        } else {
+            lerp(0, max, fraction).toInt()
+        }
     }
 
     private fun ProgressBar.toggleVisible() {

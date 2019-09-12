@@ -34,12 +34,8 @@ class StageView @JvmOverloads constructor(
     private fun resetStageEventAnimation() {
         progress.setMutateImageResource(R.drawable.progress)
         progressThumb.run {
-            cancelAnimation()
             scaleX = .3f
             scaleX = .3f
-            progressThumb.setAnimation(R.raw.stage_loop)
-            progressThumb.repeatCount = 0
-            progressThumb.frame = 0
         }
     }
 
