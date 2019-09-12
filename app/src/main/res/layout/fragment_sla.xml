@@ -34,7 +34,7 @@
             android:foreground="?selectableItemBackground"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:stateListAnimator="@animator/selected_comment"
+            android:stateListAnimator="@animator/sla_card"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -185,5 +185,20 @@
         android:stateListAnimator="@animator/mtrl_btn_state_list_anim"
         android:text="Button"
         app:srcCompat="@drawable/ic_close" />
+
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:background="@drawable/ic_oval"
+        android:backgroundTint="@color/android1"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_touch_app"
+        android:stateListAnimator="@animator/sla_fab" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
