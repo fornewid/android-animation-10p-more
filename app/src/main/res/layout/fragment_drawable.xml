@@ -84,7 +84,18 @@
             app:layout_constraintTop_toBottomOf="@id/animatedRotate" />
 
         <soup.animation.sample.widget.CheckedImageView
-            android:id="@+id/icon"
+            android:id="@+id/batteryIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="24dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:src="@drawable/asld_battery"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <soup.animation.sample.widget.CheckedImageView
+            android:id="@+id/starIcon"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="24dp"

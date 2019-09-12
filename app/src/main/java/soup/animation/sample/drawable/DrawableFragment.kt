@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.animation.doOnRepeat
+import androidx.core.view.postOnAnimationDelayed
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_drawable.*
 import soup.animation.sample.R
@@ -48,11 +49,20 @@ class DrawableFragment : Fragment() {
 
     private fun updateRippleEffect() {
         animatedVector.toggle()
-        icon.toggle()
+        batteryIcon.performRippleEffect()
+        batteryIcon.toggle()
+        starIcon.toggle()
     }
 
     private fun updateUi(fraction: Float) {
         batteryClip.setImageLevel((fraction * 10000).toInt())
         batteryChargingClip.setImageLevel((fraction * 10000).toInt())
+    }
+
+    private fun View.performRippleEffect() {
+        isPressed = true
+        postOnAnimationDelayed(50) {
+            isPressed = false
+        }
     }
 }

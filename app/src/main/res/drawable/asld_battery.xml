@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/selected"
+        android:drawable="@drawable/ic_battery_100"
+        android:state_checked="true" />
+
+    <item
+        android:id="@+id/unselected"
+        android:drawable="@drawable/ic_battery_0"
+        android:state_checked="false" />
+
+    <transition
+        android:drawable="@drawable/ad_battery_select"
+        android:fromId="@id/unselected"
+        android:toId="@id/selected" />
+
+    <transition
+        android:drawable="@drawable/ad_battery_unselect"
+        android:fromId="@id/selected"
+        android:toId="@id/unselected" />
+
+</animated-selector>
