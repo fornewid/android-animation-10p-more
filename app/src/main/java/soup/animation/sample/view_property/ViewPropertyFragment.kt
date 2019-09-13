@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_view_property.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
 
-class ViewPropertyFragment : Fragment() {
+class ViewPropertyFragment : Fragment(), ViewAnimation {
 
     private var maxTranslationX: Float = 0f
     private var maxTranslationY: Float = 0f
@@ -80,6 +80,20 @@ class ViewPropertyFragment : Fragment() {
                     isChecked = !isChecked
                     uiHandler.sendEmptyMessage(UPDATE_UI)
                 }
+
+            if (icon.isChecked) {
+                dim.animateOutForDim()
+                flashButton.animateOutForHeader()
+                starButton.animateOutForHeader()
+                toyButton.animateOutForHeader()
+                closeButton.animateOutForCloseButton()
+            } else {
+                dim.animateInForDim()
+                flashButton.animateInForHeader(0)
+                starButton.animateInForHeader(70)
+                toyButton.animateInForHeader(140)
+                closeButton.animateInForCloseButton()
+            }
         }
     }
 

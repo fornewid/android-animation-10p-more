@@ -58,17 +58,6 @@ class ViewAnimationFragment : Fragment() {
                 TranslateAnimation(0f, maxTranslationX, 0f, maxTranslationY)
                     .withRepeat()
             )
-//                setAnimationListener(object : Animation.AnimationListener {
-//
-//                    override fun onAnimationStart(animation: Animation) {
-//                    }
-//
-//                    override fun onAnimationRepeat(animation: Animation) {
-//                    }
-//
-//                    override fun onAnimationEnd(animation: Animation) {
-//                    }
-//                })
         }
         icon.startAnimation(animation)
     }

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_dynamic_spring.*
 import soup.animation.sample.R
 import soup.animation.sample.interpolator.Interpolators
 
-class SpringFragment : Fragment() {
+class SpringFragment : Fragment(), ViewAnimation {
 
     private var maxTranslationX: Float = 0f
     private var maxTranslationY: Float = 0f
@@ -52,6 +52,7 @@ class SpringFragment : Fragment() {
 
             var reverse = false
             animator.doOnRepeat {
+                animateHeaderUi(reverse)
                 if (reverse) {
                     iconTransX.animateToFinalPosition(0f)
                     iconTransY.animateToFinalPosition(0f)
@@ -88,5 +89,21 @@ class SpringFragment : Fragment() {
                 dampingRatio = SpringForce.DAMPING_RATIO_LOW_BOUNCY
                 stiffness = SpringForce.STIFFNESS_LOW
             }
+    }
+
+    private fun animateHeaderUi(reverse: Boolean) {
+        if (reverse) {
+            dim.animateOutForDim()
+            flashButton.animateOutForHeader()
+            starButton.animateOutForHeader()
+            toyButton.animateOutForHeader()
+            closeButton.animateOutForCloseButton()
+        } else {
+            dim.animateInForDim()
+            flashButton.animateInForHeader(0)
+            starButton.animateInForHeader(70)
+            toyButton.animateInForHeader(140)
+            closeButton.animateInForCloseButton()
+        }
     }
 }
