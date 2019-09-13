@@ -56,6 +56,12 @@ class CircularRevealFragment : Fragment() {
                 revealView.showContents()
             }
         }
+        transformFab.setOnClickListener {
+            transformFab.isExpanded = true
+        }
+        scrim.setOnClickListener {
+            transformFab.isExpanded = false
+        }
     }
 
     private fun CircularRevealLinearLayout.unfoldMenu() {
