@@ -320,4 +320,19 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+    <!-- Custom (ConstraintLayout) -->
+
+    <fragment
+        android:id="@+id/custom"
+        android:name="soup.animation.sample.custom.ConstraintLayoutFragment"
+        tools:layout="@layout/fragment_custom_constraint_layout" />
+
+    <action
+        android:id="@+id/action_to_custom"
+        app:destination="@id/custom"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
 </navigation>

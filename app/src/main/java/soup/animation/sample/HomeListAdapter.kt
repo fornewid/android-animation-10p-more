@@ -8,23 +8,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import soup.animation.sample.MainGraphDirections.Companion.actionToAnimator
 import soup.animation.sample.MainGraphDirections.Companion.actionToAnimatorReveal
+import soup.animation.sample.MainGraphDirections.Companion.actionToCustom
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawable
-import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableRipple
-import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableLoading
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableGradient
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableLoading
 import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableNotification
+import soup.animation.sample.MainGraphDirections.Companion.actionToDrawableRipple
+import soup.animation.sample.MainGraphDirections.Companion.actionToFling
 import soup.animation.sample.MainGraphDirections.Companion.actionToInterpolator
 import soup.animation.sample.MainGraphDirections.Companion.actionToLayoutTransition
-import soup.animation.sample.MainGraphDirections.Companion.actionToSla
 import soup.animation.sample.MainGraphDirections.Companion.actionToRecyclerView
-import soup.animation.sample.MainGraphDirections.Companion.actionToFling
+import soup.animation.sample.MainGraphDirections.Companion.actionToSharedElements
+import soup.animation.sample.MainGraphDirections.Companion.actionToSla
 import soup.animation.sample.MainGraphDirections.Companion.actionToSpring
 import soup.animation.sample.MainGraphDirections.Companion.actionToSpringRecyclerView
+import soup.animation.sample.MainGraphDirections.Companion.actionToThirdParty
 import soup.animation.sample.MainGraphDirections.Companion.actionToTransition
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewAnimation
 import soup.animation.sample.MainGraphDirections.Companion.actionToViewProperty
-import soup.animation.sample.MainGraphDirections.Companion.actionToSharedElements
-import soup.animation.sample.MainGraphDirections.Companion.actionToThirdParty
 
 class HomeListAdapter(
     private val listener: (HomeItem) -> Unit
@@ -87,6 +88,9 @@ class HomeListAdapter(
         },
         HomeItem(R.drawable.ic_third_party, R.string.title_third_party) {
             actionToThirdParty()
+        },
+        HomeItem(R.drawable.ic_animator, R.string.title_custom_constraint_layout) {
+            actionToCustom()
         }
     )
 

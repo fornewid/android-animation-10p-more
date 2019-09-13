@@ -18,6 +18,11 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_to_complex">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_to_drawable">
                     <value>
                       <LayoutPositions />
@@ -109,6 +114,18 @@
                     </value>
                   </entry>
                   <entry key="animator">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="animator_complex">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">

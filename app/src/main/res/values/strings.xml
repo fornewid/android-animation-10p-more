@@ -21,4 +21,5 @@
     <string name="title_shared_elements">SharedElements (Master)</string>
     <string name="title_shared_elements_detail">SharedElements (Detail)</string>
     <string name="title_third_party">Third Party</string>
+    <string name="title_custom_constraint_layout">Custom (ConstraintLayout)</string>
 </resources>

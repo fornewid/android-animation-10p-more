@@ -6,8 +6,10 @@
         <attr name="checked" format="boolean" />
     </declare-styleable>
 
+    <attr name="interpolator" format="reference" />
+
     <declare-styleable name="InterpolatorView">
-        <attr name="interpolator" format="reference" />
+        <attr name="interpolator" />
     </declare-styleable>
 
     <declare-styleable name="AnimatedBorderView">
@@ -22,6 +24,15 @@
         <attr name="apng_autoPlay" format="boolean" />
         <attr name="apng_loop" format="boolean" />
         <attr name="apng_rawRes" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CollapsingConstraintLayout">
+        <attr name="appBarLayoutId" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Alpha">
+        <attr name="interpolator" />
+        <attr name="reverse" format="boolean" />
     </declare-styleable>
 
 </resources>
