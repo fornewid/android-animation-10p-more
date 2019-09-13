@@ -17,8 +17,8 @@ class SharedElementsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         exitTransition =
             TransitionInflater.from(context).inflateTransition(R.transition.move)
-        sharedElementReturnTransition =
-            TransitionInflater.from(context).inflateTransition(R.transition.move_shared_element)
+        reenterTransition =
+            TransitionInflater.from(context).inflateTransition(R.transition.move)
     }
 
     override fun onCreateView(

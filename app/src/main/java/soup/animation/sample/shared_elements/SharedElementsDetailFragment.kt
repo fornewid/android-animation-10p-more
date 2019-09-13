@@ -1,11 +1,11 @@
 package soup.animation.sample.shared_elements
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import android.transition.TransitionInflater
 import soup.animation.sample.R
 
 class SharedElementsDetailFragment : Fragment() {
@@ -15,6 +15,8 @@ class SharedElementsDetailFragment : Fragment() {
         enterTransition =
             TransitionInflater.from(context).inflateTransition(R.transition.move)
         sharedElementEnterTransition =
+            TransitionInflater.from(context).inflateTransition(R.transition.move_shared_element)
+        sharedElementReturnTransition =
             TransitionInflater.from(context).inflateTransition(R.transition.move_shared_element)
     }
 
