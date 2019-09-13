@@ -1,15 +1,18 @@
 package soup.animation.sample
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.postOnAnimationDelayed
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_splash.*
 
 class SplashFragment : Fragment() {
+
+    private var doNavigate = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,13 +24,36 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        icon?.run {
-            animate()
-                .setDuration(1000L)
-                .rotation(-1000f)
+        icon.animate()
+            .setDuration(1000L)
+            .rotation(-1000f)
+            .setListener(
+                object : AnimatorListenerAdapter() {
+
+                    override fun onAnimationEnd(animation: Animator) {
+                        navigateToHome()
+                    }
+                }
+            )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (doNavigate) {
+            navigateToHome()
         }
-        view.postOnAnimationDelayed(1000) {
+    }
+
+    override fun onPause() {
+        super.onPause()
+        icon.animate().cancel()
+    }
+
+    private fun navigateToHome() {
+        if (!isStateSaved) {
             findNavController().navigate(SplashFragmentDirections.actionToHome())
+        } else {
+            doNavigate = true
         }
     }
 }
