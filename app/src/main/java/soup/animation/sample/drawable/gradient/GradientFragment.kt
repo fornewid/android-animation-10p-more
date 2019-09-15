@@ -20,8 +20,8 @@ class GradientFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        animatedGradientAnimator2.clipToOval(true)
-        animatedGradientAnimator3.clipToRoundRect(
+        animatedGradientCircle.clipToOval(true)
+        animatedGradientRoundRect.clipToRoundRect(
             resources.getDimension(R.dimen.gradient_clip_radius))
     }
 }

@@ -29,57 +29,78 @@
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             android:src="@drawable/gradient"
+            app:layout_constraintBottom_toTopOf="@id/animatedGradientRect"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <soup.animation.sample.drawable.gradient.AnimatedGradientView
-            android:id="@+id/animatedGradientAnimator"
+            android:id="@+id/animatedGradientRect"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            app:layout_constraintStart_toEndOf="@id/animatedGradientFade"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/animatedGradientRoundRect"
+            app:layout_constraintEnd_toStartOf="@id/animatedGradientCircle"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <soup.animation.sample.drawable.gradient.AnimatedGradientView
-            android:id="@+id/animatedGradientAnimator2"
+            android:id="@+id/animatedGradientCircle"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            app:layout_constraintStart_toEndOf="@id/animatedGradientAnimator"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/animatedGradientBorder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientRect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <soup.animation.sample.drawable.gradient.AnimatedGradientView
-            android:id="@+id/animatedGradientAnimator3"
+            android:id="@+id/animatedGradientRoundRect"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
-            app:layout_constraintStart_toEndOf="@id/animatedGradientAnimator2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/animatedGradientPath"
+            app:layout_constraintEnd_toStartOf="@id/animatedGradientBorder"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animatedGradientRect" />
 
         <soup.animation.sample.drawable.gradient.AnimatedBorderView
+            android:id="@+id/animatedGradientBorder"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             app:borderWidth="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/animatedGradientStar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientRoundRect"
+            app:layout_constraintTop_toBottomOf="@id/animatedGradientCircle" />
 
         <soup.animation.sample.drawable.gradient.AnimatedStarView
+            android:id="@+id/animatedGradientPath"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             app:clipOuter="true"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@id/animatedGradientStar"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animatedGradientRoundRect" />
 
         <soup.animation.sample.drawable.gradient.AnimatedStarView
+            android:id="@+id/animatedGradientStar"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             app:clipOuter="false"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/animatedGradientPath"
+            app:layout_constraintTop_toBottomOf="@id/animatedGradientBorder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

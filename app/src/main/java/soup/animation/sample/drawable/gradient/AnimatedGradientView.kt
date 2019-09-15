@@ -18,7 +18,7 @@ open class AnimatedGradientView @JvmOverloads constructor(
 
     private val colors = createColors()
 
-    protected open fun createColors(): IntArray {
+    private fun createColors(): IntArray {
         return intArrayOf(
             Color.RED,
             Color.GREEN,

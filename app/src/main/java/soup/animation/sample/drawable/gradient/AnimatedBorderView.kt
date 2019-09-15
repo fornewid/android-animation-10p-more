@@ -14,15 +14,6 @@ class AnimatedBorderView @JvmOverloads constructor(
 
     private var ribbonGap: Float = 0f
 
-    override fun createColors(): IntArray {
-        return intArrayOf(
-            Color.parseColor("#70ffee"),
-            Color.parseColor("#19d4d6"),
-            Color.parseColor("#70ffee"),
-            Color.parseColor("#01ea70")
-        )
-    }
-
     init {
         if (attrs != null) {
             val a = context.obtainStyledAttributes(attrs, R.styleable.AnimatedBorderView, defStyle, 0)
