@@ -47,8 +47,8 @@ class RippleFragment : Fragment() {
         rippleNormal.performRippleEffect()
         rippleBorderless.performRippleEffect()
         rippleWrong.performRippleEffect()
-        rippleCustom1.performRippleEffect()
-        rippleCustom2.performRippleEffect()
+        rippleRight.performRippleEffect()
+        rippleCustom.performRippleEffect()
     }
 
     private fun View.performRippleEffect() {

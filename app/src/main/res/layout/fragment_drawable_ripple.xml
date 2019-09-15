@@ -33,7 +33,10 @@
             android:focusable="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_touch_app"
+            app:layout_constraintBottom_toTopOf="@id/rippleBorderless"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -46,8 +49,10 @@
             android:focusable="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_touch_app"
-            app:layout_constraintStart_toEndOf="@id/rippleNormal"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/rippleWrong"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rippleNormal" />
 
         <ImageView
             android:id="@+id/rippleWrong"
@@ -58,30 +63,36 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/ic_rectangle"
-            app:layout_constraintStart_toEndOf="@id/rippleBorderless"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/rippleRight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rippleBorderless" />
 
         <ImageView
-            android:id="@+id/rippleCustom1"
+            android:id="@+id/rippleRight"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             android:background="@drawable/ic_rectangle_ripple1"
             android:clickable="true"
             android:focusable="true"
-            app:layout_constraintStart_toEndOf="@id/rippleWrong"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/rippleCustom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rippleWrong" />
 
         <ImageView
-            android:id="@+id/rippleCustom2"
+            android:id="@+id/rippleCustom"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_margin="4dp"
             android:background="@drawable/ic_rectangle_ripple2"
             android:clickable="true"
             android:focusable="true"
-            app:layout_constraintStart_toEndOf="@id/rippleCustom1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rippleRight" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
