@@ -42,6 +42,9 @@ class LayoutTransitionFragment : Fragment() {
                 container.inflate(R.layout.item_recyclerview).apply {
                     icon.setImageResource(R.drawable.ic_spring)
                     text.text = "Item ${container.size + 1}"
+                    setOnClickListener {
+                        container.removeView(this)
+                    }
                 }
             )
         }
