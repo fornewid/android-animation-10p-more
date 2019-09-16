@@ -1,7 +1,9 @@
 package soup.animation.sample.drawable.gradient
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Rect
+import android.graphics.Region
 import android.os.Build
 import android.util.AttributeSet
 import soup.animation.sample.R
@@ -12,39 +14,30 @@ class AnimatedBorderView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : AnimatedGradientView(context, attrs, defStyle) {
 
-    private var ribbonGap: Float = 0f
+    private var borderWidth: Int = 0
 
     init {
         if (attrs != null) {
             val a = context.obtainStyledAttributes(attrs, R.styleable.AnimatedBorderView, defStyle, 0)
             try {
-                ribbonGap = a.getDimension(R.styleable.AnimatedBorderView_borderWidth, 0f)
+                borderWidth = a.getDimensionPixelSize(R.styleable.AnimatedBorderView_borderWidth, 0)
             } finally {
                 a.recycle()
             }
         }
     }
 
-    override fun draw(canvas: Canvas?) {
-        canvas?.clip(ribbonGap)
+    override fun draw(canvas: Canvas) {
+        canvas.clipBorder(borderWidth)
         super.draw(canvas)
     }
 
-    private fun Canvas.clip(gap: Float) {
+    private fun Canvas.clipBorder(gap: Int) {
+        val rect = Rect(gap, gap, width - gap, height - gap)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            gap.toInt().let {
-                clipOutRect(Rect(it, it, width - it, height - it))
-            }
+            clipOutRect(rect)
         } else {
-            clipPath(
-                Path().apply {
-                    addRect(
-                        RectF(gap, gap, width - gap, height - gap),
-                        Path.Direction.CW
-                    )
-                },
-                Region.Op.DIFFERENCE
-            )
+            clipRect(rect, Region.Op.DIFFERENCE)
         }
     }
 }
