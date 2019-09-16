@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path android:pathData="M0,0V24H24V-24z" android:fillColor="#121212" />
+    <path
+        android:name="calendar"
+        android:pathData="M 9.49 14.6 C 10.607 14.6 11.99 13.481 11.99 12.1 C 11.99 10.719 11.366 9.5 9.49 9.5 C 7.614 9.5 6.99 10.719 6.99 12.1 C 6.99 13.481 8.373 14.6 9.49 14.6 Z M 18.99 3 L 17.99 3 L 17.99 1 L 15.99 1 L 15.99 3 L 7.99 3 L 7.99 1 L 5.99 1 L 5.99 3 L 4.99 3 C 3.88 3 3 3.9 3 5 L 3.99 18 C 3.99 19.1 4.88 20 5.99 20 L 17.99 20 C 19.09 20 19.99 19.1 19.99 18 L 20.99 5 C 20.99 3.9 20.09 3 18.99 3 Z M 17.99 18 L 5.99 18 L 4.99 7.8 L 18.99 7.8 L 17.99 18 Z"
+        android:fillColor="#ffffff"/>
+</vector>
+<!-- 0 ~ 400 -->
