@@ -25,8 +25,8 @@ class TransitionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fab.setOnClickListener {
             // val transition = TransitionInflater.from(it.context).inflateTransition(R.transition.auto_transition)
-            // TransitionManager.beginDelayedTransition(container, transition)
-            TransitionManager.beginDelayedTransition(container, AutoTransition())
+            val transition = AutoTransition()
+            TransitionManager.beginDelayedTransition(container, transition)
             outerBackground.switchVisibility()
             innerBackground.switchVisibility()
         }
