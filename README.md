@@ -6,6 +6,8 @@
 
 [APK 다운로드하기](https://github.com/fornewid/android-animation-10p-more/releases/download/v1.0/app-debug.apk)
 
+<img src='https://github.com/fornewid/android-animation-10p-more/tree/master/Screenshots/preview.gif' />
+
 ## License
 
 ```
