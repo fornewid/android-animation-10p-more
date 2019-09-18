@@ -14,6 +14,8 @@ class SharedElementsDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
         enterTransition =
             TransitionInflater.from(context).inflateTransition(R.transition.move)
+        returnTransition =
+            TransitionInflater.from(context).inflateTransition(R.transition.move)
         sharedElementEnterTransition =
             TransitionInflater.from(context).inflateTransition(R.transition.move_shared_element)
         sharedElementReturnTransition =
